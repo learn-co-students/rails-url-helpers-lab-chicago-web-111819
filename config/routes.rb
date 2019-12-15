@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get '/students/:id/activate', to: 'students#update', as: 'activate_student'
 
   resources :students, only: [:index, :show] 
-
 end
