@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get '/students/:id/activate', to: 'students#update', as: 'activate_student'
 
-  resources :students, only: [:index, :show] do
-    put :activate_student, on: :member
-  end
+  resources :students, only: [:index, :show] 
 
 end
