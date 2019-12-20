@@ -5,7 +5,19 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def new
+    @student = Student.new(:active => false)
+  end
+
   def show
+    set_student
+  end
+
+  def activate
+    s = set_student
+    s.active = !s.active
+    s.save
+    redirect_to student_path(s)
   end
 
   private
